@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class PnC {
 	private static final int mod = 1000000007;
-	private static final int max_n = 400040;
+	private static final int max_n = 400;
 	private static int[] f = new int[max_n];
 	private static int[] df = new int[max_n];
     private final Scanner sc;
@@ -23,19 +23,35 @@ public class PnC {
     
     public int run() {
     	prep();
+        System.out.println("has prepped...");
         int n = sc.nextInt();
         int ans = 0 ;
         for(int i=0;i<=n;++i){
             int a = sc.nextInt();
             if(a==0) break;
-            ans = // complete the formula...
+            if (i+3>a) {
+                System.out.println(a);
+                System.out.println(i);
+                ans += C(i+2,a-1);
+                System.out.println(C(a+2,a-1));
+            }
+            else {
+                System.out.println(a);
+                System.out.println(i);
+
+                ans += C(a+1,i+1);
+                System.out.println(C(a+1,i+1));
+            }
+
         }
         System.out.println(ans);
+
         return ans;
     }
     
     static int C(int n,int k){
-        // complete the formula...
+        int ans = f[n] / f[n-k];
+        return ans;
     }
     static void prep(){
         f[0] = df[0] = 1;
@@ -45,6 +61,10 @@ public class PnC {
         }
     }
     static int power(int n,int k){
-    	// complete the formula...
+        int ans = 1;
+    	for(int i=1; i<=n;i++){
+            ans = ans * k;
+        }
+        return ans;
     }
 }

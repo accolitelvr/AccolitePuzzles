@@ -8,7 +8,21 @@ public class Matrix {
 	private final Scanner sc;
 	
 	public int[][] solve(int[][] A) {
-	    // Write logic here...
+	    int xLength = A.length;
+        int yLength = A[0].length;
+        int[][] out = new int[xLength][yLength];
+        for(int xScan=0;xScan<xLength;xScan++){
+            for (int yScan=0;yScan<yLength;yScan++){
+                int Count = count(A, xScan, yScan, xLength, yLength);
+                if ((Count == 3) || (Count == 2 && A[xScan][yScan] == 1)) {
+                    out[xScan][yScan] = 1;
+                }
+                else {
+                    out[xScan][yScan] = 0;
+                }
+            }
+        }
+        return out;
 	}
 
 	int dis[][]={{-1,-1},{-1,0},{-1,1},{0,-1},{0,1},{1,-1},{1,0},{1,1}};

@@ -1,3 +1,4 @@
+/*
 package com.training.accolite.week1Tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -47,3 +48,4 @@ public class ArrayTest {
 		assertEquals(1, arr.run());			
 	}
 }
+*/

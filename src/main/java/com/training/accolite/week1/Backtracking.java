@@ -42,7 +42,10 @@ public class Backtracking {
 	}
  
 	private int go(int step, int errors, boolean[] example) {
-		// Write your code here...
+
+		int out = go(step +1, c[step+1], s[step+1]);
+
+        return out;
 	}
  
 	public int run() {
